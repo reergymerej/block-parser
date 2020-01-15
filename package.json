@@ -2,6 +2,15 @@
   "name": "jex-block-parser",
   "version": "1.0.0",
   "main": "lib/index.js",
+  "description": "parse blocks of text based on indentation",
+  "keywords": [
+    "parse",
+    "block",
+    "parser",
+    "block parser",
+    "indentation",
+    "indent"
+  ],
   "scripts": {
     "start": "./node_modules/@babel/node/bin/babel-node.js src/index.js",
     "test": "jest src --config jest.config.js",
