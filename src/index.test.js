@@ -3,7 +3,6 @@ import * as mod from '.'
 const log = (x) =>
   console.log(JSON.stringify(x, null, '  '))
 
-
 describe('isWithinScope', () => {
   it('should is', () => {
     expect(mod.isWithinScope('x', ' y')).toBe(true)
@@ -161,5 +160,102 @@ describe('collapse', () => {
         children: [],
       },
     ])
+  })
+})
+
+describe('mac daddy', () => {
+  it('should blow away all expectations for awesomeness at every tier', () => {
+    const input = `
+boo
+  boo-horse
+  boo-cat
+  boo-dog
+
+bee
+  bee-yellow
+    bee-yellow-one
+
+    bee-yellow-two
+
+baa
+
+blork
+                apple
+
+
+
+                orange
+                  smorange
+        cat
+
+`
+
+    const result = mod.parse(input)
+    // log(result)
+    expect(result).toEqual(
+      [
+        {
+          'scope': 'boo',
+          'children': [
+            {
+              'scope': '  boo-horse',
+              'children': []
+            },
+            {
+              'scope': '  boo-cat',
+              'children': []
+            },
+            {
+              'scope': '  boo-dog',
+              'children': []
+            }
+          ]
+        },
+        {
+          'scope': 'bee',
+          'children': [
+            {
+              'scope': '  bee-yellow',
+              'children': [
+                {
+                  'scope': '    bee-yellow-one',
+                  'children': []
+                },
+                {
+                  'scope': '    bee-yellow-two',
+                  'children': []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          'scope': 'baa',
+          'children': []
+        },
+        {
+          'scope': 'blork',
+          'children': [
+            {
+              'scope': '                apple',
+              'children': []
+            },
+            {
+              'scope': '                orange',
+              'children': [
+                {
+                  'scope': '                  smorange',
+                  'children': []
+                }
+              ]
+            },
+            {
+              'scope': '        cat',
+              'children': []
+            }
+          ]
+        }
+      ]
+    )
   })
 })

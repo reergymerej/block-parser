@@ -59,3 +59,7 @@ export const collapse = (list, maxNodes = 100) => {
 
   return result
 }
+
+export const parse = (text) => {
+  return collapse(text.split('\n').filter(x => x))
+}
