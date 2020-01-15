@@ -1,0 +1,27 @@
+{
+  "name": "block-parser",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "./node_modules/@babel/node/bin/babel-node.js src/index.js",
+    "test": "jest src --config jest.config.js",
+    "lint": "eslint src",
+    "build": "babel src -d lib --ignore '**/*.test.js,__mocks__'",
+    "test-report": "yarn test --coverage",
+    "lint-report": "yarn lint --format json --output-file eslint-report.json",
+    "report": "yarn test-report && yarn lint-report && sonar-scanner"
+  },
+  "author": "Jeremy Greer <jex.grizzle@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "7",
+    "@babel/core": "^7.0.0-0",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "4.18.2",
+    "eslint-scope": "^5.0.0",
+    "jest": "^24.8.0"
+  }
+}

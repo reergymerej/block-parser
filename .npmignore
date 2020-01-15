@@ -1,0 +1,11 @@
+*~
+.babelrc
+.eslint*
+.gitignore
+.scannerwork/
+.travis.yml
+coverage/
+jest*
+sonar*
+src/
+yarn.lock
