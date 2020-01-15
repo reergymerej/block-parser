@@ -1,5 +1,5 @@
 {
-  "name": "block-parser",
+  "name": "jex-block-parser",
   "version": "1.0.0",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "build": "babel src -d lib --ignore '**/*.test.js,__mocks__'",
     "test-report": "yarn test --coverage",
     "lint-report": "yarn lint --format json --output-file eslint-report.json",
-    "report": "yarn test-report && yarn lint-report && sonar-scanner"
+    "report": "yarn test-report && yarn lint-report && sonar-scanner",
+    "prepublishOnly": "yarn build"
   },
   "author": "Jeremy Greer <jex.grizzle@gmail.com>",
   "license": "ISC",
